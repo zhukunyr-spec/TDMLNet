@@ -151,7 +151,7 @@ def train(train_loader, model, optimizer, epoch, test_path):
 if __name__ == '__main__':
     set_seed(2025)
     ##################model_name#############################
-    model_name = 'IdeNet'
+    model_name = 'FMSDRNet'
 
     ###############################################
     parser = argparse.ArgumentParser()
@@ -160,14 +160,14 @@ if __name__ == '__main__':
     parser.add_argument('--optimizer', type=str,default='AdamW', help='choosing optimizer AdamW or SGD')
     parser.add_argument('--augmentation',default=True, help='choose to do random flip rotation')
     parser.add_argument('--batchsize', type=int,default=4, help='training batch size')
-    parser.add_argument('--trainsize', type=int,default=448, help='training dataset size,candidate=352,512,704')
+    parser.add_argument('--trainsize', type=int,default=448, help='training dataset size')
     parser.add_argument('--clip', type=float,default=0.5, help='gradient clipping margin')
     parser.add_argument('--load', type=str, default=None, help='train from checkpoints')
     parser.add_argument('--decay_rate', type=float,default=0.1, help='decay rate of learning rate')
     parser.add_argument('--decay_epoch', type=int,default=50, help='every n epochs decay learning rate')
     parser.add_argument('--train_path', type=str,default='./TrainDataset',help='path to train dataset')
     parser.add_argument('--test_path', type=str,default='./TestDataset/COD10K',help='path to testing dataset')
-    parser.add_argument('--save_path', type=str,default='./FMSDRNetSample/'+model_name+'/')
+    parser.add_argument('--save_path', type=str,default='./FMSDRNet/'+model_name+'/')
     parser.add_argument('--epoch_save', type=int,default=1, help='every n epochs to save model')
     opt = parser.parse_args()
 
@@ -185,10 +185,7 @@ if __name__ == '__main__':
     # ---- build models ----
     model = torch.nn.DataParallel(FMSDRNet(), device_ids=device_ids)
     model = model.cuda(device=device_ids[0])
-    #torch.cuda.set_device(0)  # set your gpu device
-    #model = IdeNet().cuda()
-
-
+    
     if opt.load is not None:
         pretrained_dict=torch.load(opt.load)
         print('!!!!!!Sucefully load model from!!!!!! ', opt.load)
