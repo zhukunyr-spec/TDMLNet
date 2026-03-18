@@ -1,5 +1,12 @@
 # Target-aware Disentanglement and Multi-Angle Adaptive Localization Network for Camouflaged Object Detection
 
+To address the challenge of separating targets from complex surroundings, we introduce a Target-aware Disentanglement Module (TDM), which extracts tar-
+get features, derives complementary surroundings features, and integrates them with local features to facilitate disentangled feature learning. To tackle the local-
+ization problem, we introduce a multi-angle feature enhancement strategy and an adaptive localization mechanism equipped with channel and spatial atten-
+tion as well as learnable parameters, which together improve the localization and re-localization of camouflaged objects. Based on the previous insights, we pro-
+pose the Target-aware Disentanglement and Multi-Angle Adaptive Localization Network (TDMLNet)
+
+
 This repository provides the official PyTorch implementation of:
 
 **Kun Zhu, Haotian Wu, Dexin Zhao\***  
