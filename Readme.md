@@ -1,0 +1,91 @@
+# Target-aware Disentanglement and Multi-Angle Adaptive Localization Network for Camouflaged Object Detection
+
+To address the challenge of separating targets from complex surroundings, we introduce a Target-aware Disentanglement Module (TDM), which extracts target features, derives complementary surroundings features, and integrates them with local features to facilitate disentangled feature learning. To tackle the localization problem, we introduce a multi-angle feature enhancement strategy and an adaptive localization mechanism equipped with channel and spatial attention as well as learnable parameters, which together improve the localization and re-localization of camouflaged objects. Based on the previous insights, we propose the Target-aware Disentanglement and Multi-Angle Adaptive Localization Network (TDMLNet)
+
+
+This repository provides the official PyTorch implementation of:
+
+**Kun Zhu, Haotian Wu, Dexin Zhao\***  
+**"Target-aware Disentanglement and Multi-Angle Adaptive Localization Network for Camouflaged Object Detection"**  
+*The Visual Computer*
+
+> 🔗 **Contact:** zhukunyr@gmail.com
+
+---
+
+
+## 🚀 Installation
+
+### 1. Create environment
+```
+bash
+conda create -n lgunet python=3.8
+conda activate lgunet
+```
+
+
+### 2.Required Libraries
+```
+Python ≥ 3.8
+PyTorch ≥ 1.12
+torchvision ≥ 0.13
+timm
+numpy, opencv-python
+tqdm, pyyaml
+```
+
+## 📂 Dataset Preparation
+Camouflaged Object Detection Datasets
+
+Download and place datasets as:
+
+```
+datasets/
+│── CAMO/
+│── CHAMELEON/
+│── COD10K/
+│── NC4K/
+```
+
+Polyp Segmentation Datasets
+```
+datasets/
+│── Kvasir-SEG/
+│── CVC-ClinicDB/
+│── CVC-ColonDB/
+│── CVC-300/
+│── ETIS/
+```
+PantCamo Datasets
+```
+datasets/
+│── train/
+│── test/
+```
+
+## 🏋️ Training
+```
+python MyTrain.py
+```
+
+
+## 🔍 Testing
+```
+python MyTesting.py
+```
+
+## 📗 Citation
+
+Please cite our work if you use the code or results:
+```
+@article{Zhu2025TDMLNet,
+  title   = {Target-aware Disentanglement and Multi-Angle Adaptive Localization Network for Camouflaged Object Detection},
+  author  = {Kun Zhu and Haotian Wu and Dexin Zhao},
+  journal = {The Visual Computer},
+  year    = {2025}
+}
+```
+
+## 📬 Contact
+
+If you have any other questions, feel free to contact me at zhukunyr@gmail.com
